@@ -23,6 +23,7 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 public class HomePageWeb extends TestBase {
 	public WebDriver driver;
 
+
 	public void setDriver(WebDriver driver) {
 		this.driver = driver;
 	}
@@ -75,6 +76,12 @@ public class HomePageWeb extends TestBase {
 
 	@FindBy(xpath = "//span[contains(text(),'Transcript')]")
 	public WebElement transcript;
+	
+	@FindBy(xpath="//i[@class='fa fa-play']")
+	public WebElement btnPlay;
+	
+	@FindBy(id="playControls")
+	public WebElement playCtrls;
 
 	public HomePageWeb(WebDriver driver) {
 		this.driver = driver;
@@ -82,18 +89,14 @@ public class HomePageWeb extends TestBase {
 		PageFactory.initElements(driver, this);
 	}
 
-	public void homepagetitle(WebDriver driver, String testName) throws InterruptedException, IOException {
-		Thread.sleep(3000);
+	public void homepagetitle(WebDriver driver,String testName) throws InterruptedException, IOException {
 		Reporter.log("User entered into Homepage", true);
-		Thread.sleep(2000);
 		Assert.assertEquals("LSAC Test Preparation", driver.getTitle());
 	}
 
 	public void startTest1() throws InterruptedException, IOException {
-
-		WebDriverWait wait = new WebDriverWait(driver, 40);
-
 		firstLink.click();
+		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.visibilityOf(firstTestTitle));
 		txtBegin.click();
 		btnGoToQuestions.click();
@@ -114,5 +117,13 @@ public class HomePageWeb extends TestBase {
 		String acqscore = score.getText();
 		System.out.println(acqscore);
 
+	}
+	public void startTutorial1() {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		tabTutorials.click();
+		videolink.click();
+		wait.until(ExpectedConditions.visibilityOf(transcript)); 
+		btnPlay.click();
+		wait.until(ExpectedConditions.visibilityOf(playCtrls));
 	}
 }
