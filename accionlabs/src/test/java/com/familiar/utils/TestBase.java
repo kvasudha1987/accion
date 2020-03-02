@@ -1,5 +1,4 @@
 package com.familiar.utils;
-
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -16,7 +15,6 @@ import com.familiar.utils.TestProperties;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
 
 import io.appium.java_client.remote.MobileCapabilityType;
@@ -56,7 +54,7 @@ public class TestBase {
 			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 			
 			driver.get(prop.getProperty("weburl"));
-			//driver.manage().window().maximize();
+			driver.manage().window().maximize();
 		}
 
 		return driver;
