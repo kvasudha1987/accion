@@ -44,31 +44,19 @@ public class TestcaseExecution {
 		testName = method.getName();
 	}
 
-	/*
-	 * works for web
-	 * 
-	 * @Test(groups="Sanity", description="Click library tab") public void
-	 * ClickLibTab() throws InterruptedException, IOException {
-	 * System.out.println("test"); hp = new HomePage( (AppiumDriver<?>)
-	 * driver,dataArray); hp.homepagetitle(driver,testName);
-	 * 
-	 * }
-	 */
-	/*
-	 * @Test(groups="Sanity", description="Click library tab") public void
-	 * ClickLibTab() throws InterruptedException, IOException {
-	 * System.out.println("test"); hp = new HomePage( (AndroidDriver<?>)driver1); hp
-	 * = new HomePage(driver); hp.homepagetitle(driver,testName);
-	 * System.out.println("pass");
-	 * 
-	 * }
-	 */ // Passes for web
-	@Test(groups = "Sanity", description = "Click library tab")
-	public void flow() throws InterruptedException, IOException {
+	
+	@Test(groups = "Sanity", description = "Validate Library tab, attempt test 1 and fetch score")
+	public void flowLib() throws InterruptedException, IOException {
 		hp = new HomePageWeb(driver);
 		//hpm = new HomePageMobile((AndroidDriver<?>) driver1);
-		
-		ClickLibTab("DesktopWeb");
+		LibTabValidations("DesktopWeb");
+	}
+	
+	@Test(groups = "Sanity", description = "Validate tutorials tab, click link 1 and fetch score")
+	public void flowTutorials() throws InterruptedException, IOException {
+		hp = new HomePageWeb(driver);
+		hpm = new HomePageMobile((AndroidDriver<?>) driver1);
+		tutorialsTabValidation("DesktopWeb");
 	}
 
 	@AfterSuite(alwaysRun = true)
@@ -76,15 +64,27 @@ public class TestcaseExecution {
 		driver.quit();
 	}
 
-	public void ClickLibTab(String platform) throws InterruptedException, IOException {
+	public void LibTabValidations(String platform) throws InterruptedException, IOException {
 		if (platform.equals("DesktopWeb")) {
 			hp.homepagetitle(driver, testName);
 			hp.startTest1();
 			System.out.println("pass");
 		} else if (platform.equals("Android")) {
 			hpm.homepagetitle(driver1, testName);
+			hpm.startTest1();
 			System.out.println("pass");
 		}
+	}
+	public void tutorialsTabValidation(String platform) throws InterruptedException, IOException {
+		if (platform.equals("DesktopWeb")) {
+			hp.startTutorial1();
+			
+		} else if (platform.equals("Android")) {
+			hpm.homepagetitle(driver1, testName);
+			hpm.startTest1();
+			System.out.println("pass");
+		}
+		
 	}
 	
 
