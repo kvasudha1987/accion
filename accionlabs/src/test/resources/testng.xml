@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Regression Test" parallel="false" thread-count="2">
+
+<test name="Sheet1" parallel="false">
+		<groups>	
+				<run>	
+   					 <include name="Sanity" />	
+        		</run>	
+       	</groups>
+		<classes>
+			<class name="com.framework.tests.TestcaseExecution" />
+		</classes>
+
+	</test>
+
+<!-- Mobile Android -->
+<!-- <test name="SmokeTestAndroid" parallel="false">
+		<parameter name="platform" value="Android" />
+		<parameter name="browser" value="Web" />
+		<parameter name="nodeUrl"
+			value="http://127.0.0.1:4723/wd/hub" />
+		<parameter name="deviceName" value="OnePlus 6" />
+		<parameter name="platformVersion" value="9" />
+		<parameter name="udid" value="52599356" />
+		<groups>	
+				<run>	
+   					 <include name="Sanity" />	
+        		</run>	
+       	</groups>
+		<classes>
+			<class name="com.framework.tests.TestcaseExecution" />
+		</classes>
+
+	</test>-->
+<!-- Mobile iOS -->
+<!--	<test name="SmokeTestiOS" parallel="false">
+		<parameter name="platform" value="iOS" />
+		<parameter name="browser" value="Web" />
+		<parameter name="nodeUrl"
+			value="http://127.0.0.1:4725/wd/hub" />
+		<parameter name="deviceName" value="iPhone" />
+		<parameter name="platformVersion" value="12.1" />
+		<parameter name="udid"
+			value="2CB1B503-9CDB-4941-9B1F-7C9262C6F363" />
+			<groups>	
+				<run>	
+   					 <include name="Sanity" />	
+        		</run>	
+       	</groups>
+		<classes>
+			<class name="com.framework.tests.TestcaseExecution" />
+		</classes>
+
+	</test>
+
+ -->
+
+<!-- 	<test name="SmokeTest" parallel="false">
+		<parameter name="platform" value="Android" />
+		<parameter name="browser" value="Web" />
+		<parameter name="nodeUrl"
+			value="http://127.0.0.1:4723/wd/hub" />
+		<parameter name="deviceName" value="OnePlus 6" />
+		<parameter name="platformVersion" value="9" />
+		<parameter name="udid" value="52599356" />
+			<groups>	
+				<run>	
+   					 <include name="Sanity" />	
+        		</run>	
+       	</groups>
+		<classes>
+			<class name="com.framework.tests.TestcaseExecution" />
+		</classes>
+
+	</test>
+
+	<test name="SmokeTestiOS" parallel="false">
+		<parameter name="platform" value="iOS" />
+		<parameter name="browser" value="Web" />
+		<parameter name="nodeUrl"
+			value="http://127.0.0.1:4725/wd/hub" />
+		<parameter name="deviceName" value="iPhone" />
+		<parameter name="platformVersion" value="12.1" />
+		<parameter name="udid"
+			value="2CB1B503-9CDB-4941-9B1F-7C9262C6F363" />
+			<groups>	
+				<run>	
+   					 <include name="Sanity" />	
+        		</run>	
+       	</groups>
+		<classes>
+			<class name="com.framework.tests.TestcaseExecution" />
+		</classes>
+
+	</test>
+
+	<test name="SmokeTestMacChrome" parallel="false">
+		<parameter name="platform" value="Mac" />
+		<parameter name="browser" value="Chrome" />
+		<parameter name="nodeUrl" value="" />
+		<parameter name="deviceName" value="" />
+		<parameter name="platformVersion" value="" />
+		<parameter name="udid" value="" />
+			<groups>	
+				<run>	
+   					 <include name="Sanity" />	
+        		</run>	
+       	</groups>
+		<classes>
+			<class name="com.framework.tests.TestcaseExecution" />
+		</classes>
+
+	</test>
+
+	<test name="SmokeTestMacFirefox" parallel="false">
+		<parameter name="platform" value="Mac" />
+		<parameter name="browser" value="Firefox" />
+		<parameter name="nodeUrl" value="" />
+		<parameter name="deviceName" value="" />
+		<parameter name="platformVersion" value="" />
+		<parameter name="udid"
+			value="" />
+			<groups>	
+				<run>	
+   					 <include name="Sanity" />	
+        		</run>	
+       	</groups>
+		<classes>
+			<class name="com.framework.tests.TestcaseExecution" />
+		</classes>
+
+	</test>
+	
+	<test name="SmokeTestMacSafari" parallel="false">
+		<parameter name="platform" value="Mac" />
+		<parameter name="browser" value="Safari" />
+		<parameter name="nodeUrl" value="" />
+		<parameter name="deviceName" value="" />
+		<parameter name="platformVersion" value="" />
+		<parameter name="udid"
+			value="" />
+			<groups>	
+				<run>	
+   					 <include name="Sanity" />	
+        		</run>	
+       	</groups>
+		<classes>
+			<class name="com.framework.tests.TestcaseExecution" />
+		</classes>
+	</test> -->
+</suite> 
